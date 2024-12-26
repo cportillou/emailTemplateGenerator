@@ -67,9 +67,8 @@ btnRender.addEventListener("click", function (e) {
 // Functions
 
 function getFormValues() {
-  logoURL = "https://survey.10kvoices.com/CP/Graphic.php?IM=IM_6PvZEirrINmXWTQ";
-  bannerURL =
-    "https://survey.10kvoices.com/CP/Graphic.php?IM=IM_9Qq5ViJpfY2y1Ui";
+  logoURL = document.getElementById("logoURL").value;
+  bannerURL = document.getElementById("bannerURL").value;
   projectIntro = document.getElementById("projectIntro").value;
   projectWhat = document.getElementById("projectWhat").value;
   projectWhen = document.getElementById("projectWhen").value;
