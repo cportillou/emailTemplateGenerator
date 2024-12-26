@@ -38,13 +38,12 @@ form.addEventListener("submit", function (event) {
   event.preventDefault();
 
   if (!form.checkValidity()) {
-    console.log(form.checkValidity());
     // Prevent form submission if invalid
 
     alert("Please fill in all required fields correctly.");
   } else {
     getFormValues();
-    console.log("Project intro is: ", projectIntro);
+
     generateHTML();
   }
 });
@@ -285,4 +284,4 @@ function copyGeneratedCode() {
   }
 }
 
-let html = "";
+let htmlCode = "";
