@@ -67,7 +67,6 @@ btnRender.addEventListener("click", function (e) {
 // Functions
 
 function getFormValues() {
-  optOutLink = "${l://OptOutLink?d=Unsubscribe}";
   logoURL = "https://survey.10kvoices.com/CP/Graphic.php?IM=IM_6PvZEirrINmXWTQ";
   bannerURL =
     "https://survey.10kvoices.com/CP/Graphic.php?IM=IM_9Qq5ViJpfY2y1Ui";
@@ -109,31 +108,7 @@ function formatHtml(html) {
 }
 
 function generateHTML() {
-  htmlCode = formatHtml(htmlCode);
-  generatedTemplateCode.textContent = htmlCode;
-  generatedTemplateCodeContainer.classList.remove("hidden");
-}
-
-function previewGeneratedHTML() {
-  modal.classList.remove("hidden");
-  overlay.classList.remove("hidden");
-  previewModal.innerHTML = htmlCode;
-}
-
-function copyGeneratedCode() {
-  navigator.clipboard
-    .writeText(generatedTemplateCode.textContent)
-    .then((btnCopy.textContent = "Copied!"))
-    .catch((err) => alert("Failed to copy code. Error: ", err));
-
-  if (btnCopy.textContent === "Copied!") {
-    setTimeout(function () {
-      btnCopy.textContent = "Copy Code";
-    }, 1000);
-  }
-}
-
-let htmlCode = `
+  htmlCode = `
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link href="https://fonts.googleapis.com/css2?family=Alata&amp;display=swap" rel="stylesheet" />
 <style type="text/css">/* General reset */
@@ -286,3 +261,29 @@ color:#ffffff;
 	</tbody>
 </table>
 `;
+
+  htmlCode = formatHtml(htmlCode);
+  generatedTemplateCode.textContent = htmlCode;
+  generatedTemplateCodeContainer.classList.remove("hidden");
+}
+
+function previewGeneratedHTML() {
+  modal.classList.remove("hidden");
+  overlay.classList.remove("hidden");
+  previewModal.innerHTML = htmlCode;
+}
+
+function copyGeneratedCode() {
+  navigator.clipboard
+    .writeText(generatedTemplateCode.textContent)
+    .then((btnCopy.textContent = "Copied!"))
+    .catch((err) => alert("Failed to copy code. Error: ", err));
+
+  if (btnCopy.textContent === "Copied!") {
+    setTimeout(function () {
+      btnCopy.textContent = "Copy Code";
+    }, 1000);
+  }
+}
+
+let html = "";
