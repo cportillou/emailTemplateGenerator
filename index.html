@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Custom Email Template</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alata&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+    <script defer type="module" src="script.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1>Customizing email templates had never been easier - until now!</h1>
+    </header>
+    <div class="container">
+      <section class="email-template-section">
+        <form class="form-element" action="#" method="post">
+          <div class="flex-container">
+            <div class="form-column">
+              <div class="form-row">
+                <label for="logoURL">Logo URL:</label
+                ><input
+                  type="url"
+                  id="logoURL"
+                  name="logo"
+                  value="https://survey.10kvoices.com/CP/Graphic.php?IM=IM_6PvZEirrINmXWTQ"
+                  required
+                />
+              </div>
+              <div class="form-row">
+                <label for="bannerURL">Banner URL:</label
+                ><input type="url" id="bannerURL" name="banner" required />
+              </div>
+              <div class="form-row">
+                <label for="projectIntro">Project Intro Text:</label>
+                <textarea
+                  id="projectIntro"
+                  name="intro"
+                  rows="5"
+                  cols="33"
+                  required
+                ></textarea>
+              </div>
+              <div class="form-row">
+                <label for="projectWhat">Project Details - What:</label
+                ><input
+                  type="text"
+                  id="projectWhat"
+                  name="details-what"
+                  required
+                />
+              </div>
+              <div class="form-row">
+                <label for="projectWhen">Project Details - When:</label
+                ><input
+                  type="text"
+                  id="projectWhen"
+                  name="details-when"
+                  required
+                />
+              </div>
+              <div class="form-row">
+                <label for="projectDuration">Project Details - Duration:</label
+                ><input
+                  type="text"
+                  id="projectDuration"
+                  name="details-duration"
+                  required
+                />
+              </div>
+            </div>
+            <div>
+              <div class="form-row">
+                <label for="projectIncentive"
+                  >Project Details - Incentive:</label
+                ><input
+                  type="text"
+                  id="projectIncentive"
+                  name="details-incentive"
+                  pattern="^\d*(\.\d{0,2})?$"
+                  title="Enter a valid number"
+                  required
+                />
+              </div>
+
+              <div class="form-row">
+                <label for="projectClosing">Project Closing Text:</label
+                ><textarea
+                  id="projectClosing"
+                  name="closing"
+                  rows="5"
+                  cols="33"
+                  required
+                ></textarea>
+              </div>
+              <div class="form-row">
+                <label for="surveyURL">Survey URL:</label
+                ><input type="url" id="surveyURL" name="survey" required />
+              </div>
+              <div class="form-row">
+                <label for="projectManagers">Project Managers & PA:</label
+                ><input
+                  type="text"
+                  id="projectManagers"
+                  name="PM-PA"
+                  required
+                />
+              </div>
+              <div class="form-row">
+                <label for="role">Role:</label
+                ><input type="text" id="role" name="role" required />
+              </div>
+              <div class="form-row">
+                <label for="phone">Project Phone:</label
+                ><input type="tel" id="phone" name="phone" required />
+              </div>
+              <div class="form-row">
+                <label for="projectCode">Project Code:</label
+                ><input
+                  type="text"
+                  id="projectCode"
+                  name="projectCode"
+                  pattern="^\d{8}$"
+                  title="Enter a valid project code"
+                  required
+                />
+              </div>
+            </div>
+          </div>
+          <div class="flex-container">
+            <button type="submit" class="btn-form">Generate:</button>
+          </div>
+        </form>
+      </section>
+    </div>
+    <section class="output">
+      <div class="generatedTemplateCodeContainer hidden">
+        <div class="generatedTemplateCode"></div>
+        <div class="copyCode">
+          <a href="#" class="copyLinkBtn" target="_blank">Copy Code</a>
+        </div>
+        <div class="renderCode hidden">
+          <a href="#" class="renderLinkBtn" target="_blank">Preview</a>
+        </div>
+      </div>
+    </section>
+
+    <section></section>
+
+    <div class="modal hidden">
+      <button button class="btn--close-modal">&times;</button>
+      <div class="previewContent"></div>
+    </div>
+    <div class="overlay hidden"></div>
+
+    <div class="flex-container">
+      <span>Designed and developed by Cristian Portillo</span>
+    </div>
+  </body>
+</html>
